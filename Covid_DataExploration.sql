@@ -20,7 +20,7 @@ order by 3,4
 
 SELECT location, date, total_cases, new_cases, total_deaths, population
 From PortfolioProject..CovidDeaths
---Where continent is not null
+Where continent is not null
 Order by 1,2
 
 --Looking at total cases vs total deaths
@@ -28,7 +28,7 @@ Order by 1,2
 
 SELECT location, date, total_cases, total_deaths, (total_deaths/total_cases)*100 AS deathpercentage
 From PortfolioProject..CovidDeaths
---Where location like '%Belgium%'
+Where location like '%Belgium%'
 Order by 1,2
 
 --Total cases vs population
@@ -37,14 +37,14 @@ Order by 1,2
 SELECT location, date, population, total_cases, (total_cases/population)*100 AS InfectedPopulationPercentage
 From PortfolioProject..CovidDeaths
 Where location like '%Belgium%'
---Where continent is not null
+Where continent is not null
 Order by 1,2
 
 --Looking at countries with highest infection rate compared to population
 
 SELECT location, population, MAX(total_cases) AS highestinfectioncount, MAX((total_cases/population))*100 AS PercentPopulationInfected
 From PortfolioProject..CovidDeaths
---Where continent is not null
+Where continent is not null
 Group by location, population 
 Order by PercentPopulationInfected desc
 
