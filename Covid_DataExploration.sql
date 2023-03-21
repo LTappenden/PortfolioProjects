@@ -53,7 +53,7 @@ Order by PercentPopulationInfected desc
 
 SELECT location, MAX(cast(total_deaths as int)) AS TotalDeathCount 
 From PortfolioProject..CovidDeaths
---Where continent is not null
+Where continent is not null
 Group by location
 Order by TotalDeathCount desc
 
