@@ -20,7 +20,7 @@ order by 3,4
 
 SELECT location, date, total_cases, new_cases, total_deaths, population
 From PortfolioProject..CovidDeaths
-Where continent is not null
+--Where continent is not null
 Order by 1,2
 
 --Looking at total cases vs total deaths
